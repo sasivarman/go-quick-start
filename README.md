@@ -1,3 +1,9 @@
-# My Awesome Book
+# Go Quick Start
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+A quick start guide for Go programming aimed at experienced programmers.
+
+* Concise explanations
+* More code snippets
+
+
+
