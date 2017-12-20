@@ -16,20 +16,18 @@ A quick start guide for Go programming language aimed at experienced programmers
 
 Go requires all Go files to be stored under a single directory called **workspace**.
 
+* **`GOPATH`** environment variable specifies the workspace path
+* `$ go env GOPATH` outputs the active workspace path
+* [Workspace path can be changed](https://golang.org/wiki/SettingGOPATH); thus its possible to switch workspaces but highly discourage
+* Workspace path must not be the same as Go installation
+
 The workspace directory consists of the 3 sub directories:
 
-1. `src/` contains all source codes organized in to packages
+1. `src/` contains all source codes organized in to **packages**
 2. `pkg/` stores all importable libraries upon package installation
 3. `bin/` stores all executable binaries upon package installation
 
-### GOPATH environment variable
-
-* `GOPATH` environment variable specifies the workspace path
-* `$ go env GOPATH` outputs the active workspace path
-* [Workspace path can be changed](https://golang.org/wiki/SettingGOPATH); thus its possible to switch workspaces but highly discouraged
-* Workspace path must not be the same as Go installation
-
-## Packages
+## Package
 
 Go modularizes application in to packages which are just directories with `.go` files:
 
@@ -55,8 +53,18 @@ It is encouraged to follow source repository based convention for Go packages ev
 
 There are 2 types of Go package:
 
-1. **Program** - Go program that can be executed
-2. **Library** - Go library that can be imported in to program or another library
+1. **Library** - Go library that can be imported in to program or another library
+2. **Program** - Go program that can be executed
 
+## Library
 
+A library is a package that cannot be executed, but can be included in to another program or library.
+
+```go
+package world
+
+var Message string = "Hello World!"
+```
+
+This package provides a string property called `Message`.
 
