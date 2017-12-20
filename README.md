@@ -142,9 +142,11 @@ The following are the commonly used commands:
   * outputs a executable binary in the current directory when a program \(package `main`\) is build successfully
   * outputs nothing if a library is build successfully
   * outputs error if build fails
+
 * `go run [files]`
   * run `build` as above and runs resulting executable binary
   * only works on a program \(package `main`\)
+
 * `go install [files]`
   * run `build` as above and copies the resulting executable binary to workspace
   * library objects are copied to `$GOPATH/pkg/`
