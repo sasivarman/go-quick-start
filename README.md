@@ -126,5 +126,30 @@ import mathematics "math"
 import ("github.com/username/hello"; hey "../hello/hi")
 ```
 
+## Build Tools
+
+[`go` command line tool](https://golang.org/cmd/go/) is for managing Go source code:
+
+```
+$ go [command] [arguments]
+```
+
+The following are the commonly used commands:
+
+* `go build [files]`
+  * compiles the specified `.go` files \(multiple files possible\)
+  * when no files are specified, compiles `.go` files in the current directory
+  * outputs a executable binary in the current directory when a program \(package `main`\) is build successfully
+  * outputs nothing if a library is build successfully
+  * outputs error if build fails
+* `go run [files]`
+  * run `build` as above and runs resulting executable binary
+  * only works on a program \(package `main`\)
+* `go install [files]`
+  * run `build` as above and copies the resulting executable binary to workspace
+  * library objects are copied to `$GOPATH/pkg/`
+  * program \(package `main`\) executable are copied to `$GOPATH/bin/`
+  * if `$GOPATH/bin/` is added to system `PATH`, the installed executable can be run from any directory
+
 
 
