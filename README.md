@@ -38,7 +38,7 @@ $GOPATH/src/                # all source belong in workspace src directory
         world.go            # at least one .go source file
 ```
 
-The encouraged path convention in Go is to mimic source repository URL:
+The encouraged path convention in Go is to mimic source repository URL even if source is not version controlled:
 
 ```bash
 # Package from github.com/username/hello
@@ -48,8 +48,6 @@ $GOPATH/src/
             hello/          # last directory name is the package name
                 world.go
 ```
-
-It is encouraged to follow source repository based convention for Go packages even if the package is not version controlled.
 
 Nested directories are considered separate packages:
 
@@ -117,7 +115,7 @@ func main() {
 * `package` name of a program must be `main`
 * Function `main()` must be the entry point of a program
 
-The following import statement works but discouraged
+The following `import` statement works but discouraged
 
 ```go
 // multiple import statements
