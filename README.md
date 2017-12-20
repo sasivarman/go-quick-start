@@ -51,6 +51,17 @@ $GOPATH/src/
 
 It is encouraged to follow source repository based convention for Go packages even if the package is not version controlled.
 
+Nested directories are considered separate packages:
+
+```bash
+$GOPATH/src/github.com/username/
+    hello/                        # package hello -> github.com/username/hello
+        world.go
+        moon.go
+        hi/                       # package hi -> github.com/username/hello/hi
+            hey.go
+```
+
 There are 2 types of Go package:
 
 1. **Library** - Go library that can be imported in to program or another library
@@ -78,18 +89,6 @@ This `hello` package provides a function called `GetMessage()`.
 * It is encouraged that the `package` name is in lowecase alpha numeric only with no symbols
 * It is encouraged to name the`package` the same as the last directory name of the package path
 
-Nested directories are considered separate packages:
-
-```bash
-# Package from github.com/username/hello
-$GOPATH/src/github.com/username/
-    hello/                        # package hello -> github.com/username/hello
-        world.go
-        moon.go
-        hi/                       # package hi -> github.com/username/hello/hi
-            hey.go
-```
-
 A library can be split in to multiple `.go` files, but they all must remain in the same directory and must use the same `package` name. During compilation, all the package's `.go` files will be build as one.
 
 ## Program
@@ -104,7 +103,7 @@ package main
 import "fmt"                       // standard library can be imported without a path
 import "github.com/username/hello" // custom library must be imported relative to GOPATH
 import "../hello/hi"               // relative path works but discouraged
-import mathematics "math"          // imports can have and aliased name
+import mathematics "math"          // import can have alias name
 
 func main() {
     fmt.Println(hello.GetMessage())
