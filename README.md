@@ -16,7 +16,7 @@ A quick start guide for Go programming language aimed at experienced programmers
 
 Go requires all Go files to be stored under a single directory called **workspace**.
 
-* **`GOPATH`** environment variable specifies the workspace path
+* `GOPATH` environment variable specifies the workspace path
 * `$ go env GOPATH` outputs the active workspace path
 * [Workspace path can be changed](https://golang.org/wiki/SettingGOPATH); thus its possible to switch workspaces but highly discourage
 * Workspace path must not be the same as Go installation
@@ -58,13 +58,55 @@ There are 2 types of Go package:
 
 ## Library
 
-A library is a package that cannot be executed, but can be included in to another program or library.
+A Go library is a package that cannot be executed, but can be included in to another program or library.
 
 ```go
-package world
+// $GOPATH/src/github.com/username/hello/world.go
 
-var Message string = "Hello World!"
+package hello
+
+var message string = "Hello World!"
+
+// public scoped variables or functions names must start with uppercase
+func GetMessage() string {
+    return message
+}
 ```
 
-This package provides a string property called `Message`.
+This `hello` package provides a function called `GetMessage()`.
+
+* It is encouraged that the `package` name is in lowecase alpha numeric only with no symbols
+* It is encouraged to name the`package` the same as the last directory name of the package path
+
+Nested directories are considered separate packages:
+
+```bash
+# Package from github.com/username/hello
+$GOPATH/src/github.com/username/
+    hello/                        # package hello -> github.com/username/hello
+        world.go
+        moon.go
+        hi/                       # package hi -> github.com/username/hello/hi
+            hey.go
+```
+
+A library can be split in to multiple `.go` files, but they all must remain in the same directory and must use the same `package` name. During compilation, all the package's `.go` files will be build as one.
+
+## Program
+
+A Go program can be executed.
+
+```go
+// $GOPATH/src/github.com/username/say/something.go
+
+package main
+
+import "fmt"
+import "github.com/username/hello"
+import "../hello/hi"
+import mathematics "math"
+
+```
+
+
 
