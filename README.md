@@ -120,7 +120,7 @@ Imports are encouraged to be _factored_:
 
 ```go
 // encouraged way of import
-import
+import (
     "fmt"
     mathematics "math"
 )
