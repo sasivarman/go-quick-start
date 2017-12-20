@@ -94,18 +94,39 @@ A library can be split in to multiple `.go` files, but they all must remain in t
 
 ## Program
 
-A Go program can be executed.
+A Go program can be executed. Both programs and libraries can import other libraries:
 
 ```go
 // $GOPATH/src/github.com/username/say/something.go
 
 package main
 
-import "fmt"
-import "github.com/username/hello"
-import "../hello/hi"
-import mathematics "math"
+import "fmt"                       // standard library can be imported without a path
+import "github.com/username/hello" // custom library must be imported relative to GOPATH
+import "../hello/hi"               // relative path works but discouraged
+import mathematics "math"          // imports can have and aliased name
 
+func main() {
+    fmt.Println(hello.GetMessage())
+    fmt.Println(hi.GetMessage())
+    fmt.Println(mathematics.PI)
+}
+```
+
+* `package` name of a program must be `main`
+* Function `main()` must be the entry point of a program
+
+Imports are encouraged to be _factored_:
+
+```go
+// encouraged way of import
+import
+    "fmt"
+    mathematics "math"
+)
+
+// works but discouraged
+import ("github.com/username/hello"; hey "../hello/hi")
 ```
 
 
