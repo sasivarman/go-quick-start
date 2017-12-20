@@ -89,7 +89,7 @@ This `hello` package provides a function called `GetMessage()`.
 * It is encouraged that the `package` name is in lowecase alpha numeric only with no symbols
 * It is encouraged to name the`package` the same as the last directory name of the package path
 
-A library can be split in to multiple `.go` files, but they all must remain in the same directory and must use the same `package` name. During compilation, all the package's `.go` files will be build as one.
+A package can be split in to multiple `.go` files, but they all must remain in the same directory and must use the same `package` name. During compilation, all the package's `.go` files will be build as one.
 
 ## Program
 
@@ -100,10 +100,12 @@ A Go program can be executed. Both programs and libraries can import other libra
 
 package main
 
-import "fmt"                       // standard library can be imported without a path
-import "github.com/username/hello" // custom library must be imported relative to GOPATH
-import "../hello/hi"               // relative path works but discouraged
-import mathematics "math"          // import can have alias name
+import (
+    "fmt"                       // standard library can be imported without a path
+    "github.com/username/hello" // custom library must be imported relative to GOPATH
+    "../hello/hi"               // relative path works but discouraged
+    mathematics "math"          // import can have alias name
+)
 
 func main() {
     fmt.Println(hello.GetMessage())
@@ -115,16 +117,14 @@ func main() {
 * `package` name of a program must be `main`
 * Function `main()` must be the entry point of a program
 
-Imports are encouraged to be _factored_:
+The following import statement works but discouraged
 
 ```go
-// encouraged way of import
-import (
-    "fmt"
-    mathematics "math"
-)
+// multiple import statements
+import "fmt"
+import mathematics "math"
 
-// works but discouraged
+// single line factored import
 import ("github.com/username/hello"; hey "../hello/hi")
 ```
 
