@@ -105,7 +105,7 @@ Floating-point literals represent a _floating-point constant_.
 
 ## Imaginary Literals
 
-Imaginary literals represent a imaginary part of a _complex constant_. 
+Imaginary literals represent a imaginary part of a _complex constant_.
 
 ```go
 // decimal
@@ -131,7 +131,7 @@ Imaginary literals represent a imaginary part of a _complex constant_.
 
 ## Rune Literals
 
-Rune literals represents a _rune constant_. These _characters _are **Unicode code point** enclosed in single quotes `'`.
+Rune literals represents a _rune constant_. These \_characters \_are **Unicode code point** enclosed in single quotes `'`.
 
 ```go
 // valid examples
@@ -164,7 +164,7 @@ Rune literals represents a _rune constant_. These _characters _are **Unicode cod
 
 ## String Literals
 
-String literals represents a _string constant. _These are concatenated sequence of runes/characters.
+String literals represents a \_string constant. \_These are concatenated sequence of runes/characters.
 
 ```go
 // raw string literals are character sequences between back quotes `string`
@@ -174,7 +174,7 @@ world\n`   // same as "\\nhello\nworld\\n" - no escape sequences work in raw str
            // and new lines are accepted
 
 
-// interpreted string literals are character sequesnces between double quotes "string"
+// interpreted string literals are character sequences between double quotes "string"
 "\n"
 "\""                 // same as `"`
 "Hello, world!\n"
