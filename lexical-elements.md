@@ -69,10 +69,10 @@ Floating-point literals represent a _floating-point constant_.
 
 ```go
 // fractional
-0.      // = 0
-.25     // = 0.25
-72.40
-072.40  // 72.40
+     0. // = 0
+    .25 // = 0.25
+  72.40
+ 072.40 // 72.40
 2.71828
 
 // exponential - the following are all = 100
