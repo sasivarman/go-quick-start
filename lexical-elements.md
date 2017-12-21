@@ -124,7 +124,7 @@ Imaginary literals represent a imaginary part of a _complex constant_.
 12.i
 
 // fractional exponential
-.0e0i; .0E0i; 0.e0i; 0.E0i; 0.0e0i; 0.0E0i
+.0e0i;   .0E0i;  0.e0i;  0.E0i;  0.0e0i;  0.0E0i
 .0e+0i; .0E+0i; 0.e+0i; 0.E+0i; 0.0e+0i; 0.0E+0i
 .0e-0i; .0E-0i; 0.e-0i; 0.E-0i; 0.0e-0i; 0.0E-0i
 ```
