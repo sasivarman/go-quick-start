@@ -164,7 +164,7 @@ Rune literals represents a _rune constant_. These \_characters \_are **Unicode c
 
 ## String Literals
 
-String literals represents a \_string constant. \_These are concatenated sequence of runes/characters.
+String literals represents a \_string constant. These are concatenated sequence of runes/characters.
 
 ```go
 // raw string literals are character sequences between back quotes `string`
