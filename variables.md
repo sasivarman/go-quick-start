@@ -97,7 +97,7 @@ func main() {
 }
 ```
 
-A variable can be redeclared with a short hand, only when redeclared together with a new non _blank_ variable in a multi variable declaration. The redeclaration has to obey the first declaration _type_.
+A variable can be redeclared with a short hand, only when redeclared together with a new non-_blank_ variable in a multi variable declaration. The redeclaration has to obey the first declaration _type_.
 
 ```go
 func ok() {
@@ -108,13 +108,13 @@ func ok() {
 func error() {
     a := 1
     a := 2           // this is an error because it is not multi variable declaration
-    
+
     b := 3
     a, b := 4, 5     // this is an error because there is no new variable declared
-    
-    a, c := "six", 7 // this is an error before a is a int and cannot be assigned with string
-    
-    _, a := 8, 9     // this is an error because the other variable is blank
+
+    a, c := "six", 7 // this is an error because variable a is int and cannot be assigned with string
+
+    a, _ := 8, 9     // this is an error because the other variable is blank
 }
 ```
 
