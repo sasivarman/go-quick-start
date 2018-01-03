@@ -7,7 +7,7 @@ var a int     // = 0
 var b int = 1
 var c = 2     // int
 
-var z = nil     // this is an error, as nil is untyped
+var z = nil   // this is an error, as nil is untyped
 ```
 
 Multiple variables can be declared in a single `var` call:
