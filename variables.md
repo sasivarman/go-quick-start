@@ -84,5 +84,39 @@ func main() {
 }
 ```
 
+## Short Variable Declarations
+
+A shorthand for variable declaration can be used in a _function_ only:
+
+```go
+func main() {
+    a := 0
+    b := "one"
+    c, d := 2, "three"
+    _, e := 4, 5       // first assignment is ignored
+}
+```
+
+A variable can be redeclared with a short hand, only when redeclared together with a new non _blank_ variable in a multi variable declaration. The redeclaration has to obey the first declaration _type_.
+
+```go
+func ok() {
+    a := 1
+    a, b := 2, 3 // this is valid as b is a new variable   
+}
+
+func error() {
+    a := 1
+    a := 2           // this is an error because it is not multi variable declaration
+    
+    b := 3
+    a, b := 4, 5     // this is an error because there is no new variable declared
+    
+    a, c := "six", 7 // this is an error before a is a int and cannot be assigned with string
+    
+    _, a := 8, 9     // this is an error because the other variable is blank
+}
+```
+
 
 
