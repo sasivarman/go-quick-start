@@ -158,3 +158,23 @@ The following are the commonly used commands:
 
 
 
+Variables
+
+Constant
+
+Types
+
+Scope
+
+Pointers
+
+Interfaces
+
+Structs
+
+Functions
+
+Methods
+
+
+
