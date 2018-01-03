@@ -103,6 +103,7 @@ import (
     "github.com/username/hello" // custom library must be imported relative to GOPATH
     "../hello/hi"               // relative path works but discouraged
     mathematics "math"          // import can have alias name
+    _ "net/http/pprof"          // alias to blank identifier - imported but unused
 )
 
 func main() {
@@ -156,8 +157,6 @@ The following are the commonly used commands:
   * program \(package `main`\) executable are copied to `$GOPATH/bin/`
   * if `$GOPATH/bin/` is added to system `PATH`, the installed executable can be run from any directory
 
-
-
 Variables
 
 Constant
@@ -175,6 +174,4 @@ Structs
 Functions
 
 Methods
-
-
 
