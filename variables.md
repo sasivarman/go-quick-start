@@ -19,7 +19,7 @@ var g, h, i int = 6, 7, 8
 var j, k, l = 9, 10, "eleven" // = int, int, string
 ```
 
-Variable declarations can be factored:
+Variable declarations can be **factored**:
 
 ```go
 var (
@@ -97,7 +97,7 @@ func main() {
 }
 ```
 
-A variable can be redeclared with a short hand, only when redeclared together with a new non-_blank_ variable in a multi variable declaration. The redeclaration has to obey the first declaration _type_.
+A variable can be **redeclared** with a short hand, only when redeclared together with a new non-_blank_ variable in a multi variable declaration. The redeclaration has to obey the first declaration _type_.
 
 ```go
 func ok() {
